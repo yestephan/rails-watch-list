@@ -1,0 +1,18 @@
+<h1><%= @list.name %></h1>
+
+<h2>Movies:</h2>
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+  <li>
+    <%= bookmark.comment %> | <%= Movie.find(bookmark.movie_id).title %>
+    <br>
+    <%= Movie.find(bookmark.movie_id).overview %>
+    <br>
+    <%= link_to "Remove movie", bookmark_path(bookmark), method: :delete %>
+  </li>
+  <br>
+  <% end %>
+</ul>
+
+<%= link_to "Back to lists", lists_path %>
+<%= link_to "Add movie", new_list_bookmark_path(@list) %>

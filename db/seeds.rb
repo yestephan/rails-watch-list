@@ -15,9 +15,18 @@ Movie.destroy_all
 url = "http://tmdb.lewagon.com/movie/popular"
 
 # Actually fetch the contents of the remote URL as a String.
-buffer = open(url).read
+buffer = URI.open(url).read
 
 # JSON parse the results
-result = JSON.parse(buffer)
+result = JSON.parse(buffer)["results"]
 
-puts result[:results]
+i = 0
+poster_base_url = "https://image.tmdb.org/t/p/w500"
+
+
+10.times do
+  movie = result[i]
+  new_movie = Movie.create(title: movie["title"], overview: movie["overview"], poster_url: movie["poster_path"], rating: movie["vote_average"])
+  p new_movie
+  i += 1
+end
