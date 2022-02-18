@@ -8,13 +8,15 @@
     <div><%= link_to list.name, list_path(list) %></div>
   <% end %>
 
-  <h2>test</h2>
-
-  <%= cl_image_tag("ergirlwli2jn5onklr0n",
+  <div>
+    <%= cl_image_tag("ergirlwli2jn5onklr0n",
         width: 400, height: 300, crop: :fill) %>
 
-  <%= cl_image_tag("IMAGE_WITH_FACE_ID",
-  width: 150, height: 150, crop: :thumb, gravity: :face) %>
+  <%= cl_image_tag("da0aephpsb0vg2dzpaat",
+  width: 150, height: 150, crop: :crop, gravity: :face) %>
+  </div>
+
+
 
   <%= link_to "Create a new list", new_list_path %>
 </div>
