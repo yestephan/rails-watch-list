@@ -22,4 +22,5 @@
 </ul>
 
 <%= link_to "Back to lists", lists_path %>
+<%= link_to "Delete list", list_path(@list), method: :delete %>
 <%= link_to "Add movie", new_list_bookmark_path(@list) %>
