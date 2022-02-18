@@ -8,6 +8,9 @@
     <br>
     <%= Movie.find(bookmark.movie_id).overview %>
     <br>
+
+    <img src="<%= "#{@base_url}#{Movie.find(bookmark.movie_id).poster_url}" %>" alt="">
+    <br>
     <%= link_to "Remove movie", bookmark_path(bookmark), method: :delete %>
   </li>
   <br>

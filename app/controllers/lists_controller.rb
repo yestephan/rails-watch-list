@@ -7,6 +7,7 @@ class ListsController < ApplicationController
 
   def show
     @bookmarks = Bookmark.where(list_id: params[:id])
+    @base_url = "https://image.tmdb.org/t/p/w200"
   end
 
   def new
